@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:id="@+id/cv_item_note"
+    android:layout_margin="16dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data Pemilih"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_margin="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvNik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:text="NIK"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvHasilNik"
+            app:layout_constraintEnd_toStartOf="@+id/tvHasilNik"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvHasilNik" />
+
+        <TextView
+            android:id="@+id/tvNama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvHasilNama"
+            app:layout_constraintStart_toStartOf="@+id/tvNik"
+            app:layout_constraintTop_toTopOf="@+id/tvHasilNama" />
+
+        <TextView
+            android:id="@+id/tvNoHp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No.Hp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvHasilHp"
+            app:layout_constraintStart_toStartOf="@+id/tvNik"
+            app:layout_constraintTop_toTopOf="@+id/tvHasilHp" />
+
+        <TextView
+            android:id="@+id/tvKelamin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jenis \nKelamin"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvHasilKelamin"
+            app:layout_constraintStart_toStartOf="@+id/tvNik"
+            app:layout_constraintTop_toBottomOf="@+id/tvNoHp" />
+
+        <TextView
+            android:id="@+id/tvTanggal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tanggal"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvHasilTanggal"
+            app:layout_constraintStart_toStartOf="@+id/tvNik"
+            />
+
+        <TextView
+            android:id="@+id/tvAlamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alamat"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvHasilAlamat"
+            app:layout_constraintStart_toStartOf="@+id/tvNik"
+            app:layout_constraintTop_toTopOf="@+id/tvHasilAlamat" />
+
+        <TextView
+            android:id="@+id/tvGambar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gambar"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/tvNik"
+            app:layout_constraintTop_toBottomOf="@+id/tvAlamat" />
+
+
+        <TextView
+            android:id="@+id/tvHasilNik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:text="Nomor Induk Keluarga"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+
+        <TextView
+            android:id="@+id/tvHasilNama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Nama"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/tvHasilNik"
+            app:layout_constraintTop_toBottomOf="@+id/tvHasilNik" />
+
+
+
+        <TextView
+            android:id="@+id/tvHasilHp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="No. Hp"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/tvHasilNik"
+            app:layout_constraintTop_toBottomOf="@+id/tvHasilNama"/>
+
+
+
+
+
+        <TextView
+            android:id="@+id/tvHasilKelamin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Kelamin"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/tvHasilNik"
+            app:layout_constraintTop_toBottomOf="@+id/tvHasilHp"
+            />
+
+
+
+        <TextView
+            android:id="@+id/tvHasilTanggal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Tanggal"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/tvHasilNik"
+            app:layout_constraintTop_toBottomOf="@+id/tvHasilKelamin"/>
+
+
+        <TextView
+            android:id="@+id/tvHasilAlamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Alamat"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/tvHasilNik"
+            app:layout_constraintTop_toBottomOf="@+id/tvHasilTanggal"/>
+
+
+        <ImageView
+            android:id="@+id/image_rumah"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/ic_launcher_foreground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvGambar"
+            app:layout_constraintTop_toBottomOf="@+id/tvGambar" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>
