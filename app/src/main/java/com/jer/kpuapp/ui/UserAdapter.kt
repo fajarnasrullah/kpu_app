@@ -4,6 +4,7 @@ import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.jer.kpuapp.R
 import com.jer.kpuapp.databinding.ItemViewBinding
@@ -16,6 +17,7 @@ class UserAdapter(private val onItemClickCallback: OnItemClickCallback): Recycle
             if (listNotes.size > 0) {
                 this.listNotes.clear()
             }
+
             this.listNotes.addAll(listNotes)
         }
 

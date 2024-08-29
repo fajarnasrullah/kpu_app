@@ -25,5 +25,13 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, DataPemilihActivity::class.java))
         }
 
+        binding.btnInformasi.setOnClickListener {
+            startActivity(Intent(this, InformasiActivity::class.java))
+        }
+
+        binding.btnKeluar.setOnClickListener {
+            finish()
+        }
+
     }
 }

@@ -70,4 +70,10 @@ class NoteHelper(context: Context) {
         return database.delete(DATABASE_TABLE, "$_ID = '$id'", null)
     }
 
+    fun deleteAll(): Int {
+        return database.delete(DATABASE_TABLE, null, null)
+    }
+
+
+
 }

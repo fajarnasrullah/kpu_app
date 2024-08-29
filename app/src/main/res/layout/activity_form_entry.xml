@@ -251,17 +251,29 @@
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_cek_lokasi"
-        style="@style/PrimaryActiveButton"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="30dp"
-        android:text="Cek Lokasi"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_cek_lokasi"
+                style="@style/PrimaryActiveButton"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="16dp"
+                android:text="Maps"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout4"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_set_lokasi"
+                style="@style/PrimaryActiveButton"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="30dp"
+                android:text="Apply"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_camera"
@@ -283,7 +295,7 @@
         android:layout_marginTop="16dp"
         android:text="Upload"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/btn_cek_lokasi"
+        app:layout_constraintEnd_toEndOf="@+id/btn_set_lokasi"
         app:layout_constraintTop_toBottomOf="@+id/btn_cek_lokasi" />
 
     <ImageView

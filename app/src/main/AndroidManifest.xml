@@ -26,12 +26,15 @@
         android:theme="@style/Theme.KpuApp"
         tools:targetApi="31">
         <activity
+            android:name=".ui.InformasiActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.MapsActivity"
             android:exported="false" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAQpzZtkVMjKK_oALmCxidoOyJK_lrPlWc" />
+            android:value="AIzaSyDel1HqL281gZgBGp_TZUgu5fFYYBvDdoQ" />
 
         <activity
             android:name=".ui.DataPemilihActivity"

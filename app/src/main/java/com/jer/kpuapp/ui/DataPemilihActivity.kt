@@ -24,6 +24,7 @@ import kotlinx.coroutines.launch
 class DataPemilihActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDataPemilihBinding
+    private lateinit var noteHelper: NoteHelper
 
     private lateinit var adapter: UserAdapter
 
@@ -71,8 +72,8 @@ class DataPemilihActivity : AppCompatActivity() {
         binding.rvNotes.layoutManager = LinearLayoutManager(this)
         binding.rvNotes.setHasFixedSize(true)
 
-
-
+        noteHelper = NoteHelper.getInstance(applicationContext)
+        noteHelper.open()
 
         adapter = UserAdapter(object : UserAdapter.OnItemClickCallback {
             override fun onItemClicked(selectedNote: Note?, position: Int?) {
@@ -82,18 +83,32 @@ class DataPemilihActivity : AppCompatActivity() {
                 resultLauncher.launch(intent)
             }
         })
+
+
+
         binding.rvNotes.adapter = adapter
         binding.fabAdd.setOnClickListener {
             val intent = Intent(this@DataPemilihActivity, FormEntryActivity::class.java)
+//            startActivity(intent)
             resultLauncher.launch(intent)
         }
 
+        binding.btnDelete.setOnClickListener {
+            val result = noteHelper.deleteAll().toLong()
+            if (result > 0) {
+                adapter.listNotes = ArrayList()
+                showSnackbarMessage("Semua data berhasil dihapus")
+            } else {
+                showSnackbarMessage("Gagal menghapus data")
+            }
+        }
 
         if (savedInstanceState == null) {
 
             loadNotesAsync()
         } else {
             val list = savedInstanceState.getParcelableArrayList<Note>(EXTRA_STATE)
+
             if (list != null) {
                 adapter.listNotes = list
             }
@@ -106,6 +121,7 @@ class DataPemilihActivity : AppCompatActivity() {
         super.onSaveInstanceState(outState)
         outState.putParcelableArrayList(EXTRA_STATE, adapter.listNotes)
     }
+
 
 
     private fun loadNotesAsync() {
@@ -128,6 +144,11 @@ class DataPemilihActivity : AppCompatActivity() {
             noteHelper.close()
         }
     }
+
+//    override fun onDestroy() {
+//        super.onDestroy()
+//        noteHelper.close()
+//    }
 
     private fun showSnackbarMessage(message: String) {
         Snackbar.make(binding.rvNotes, message, Snackbar.LENGTH_SHORT).show()

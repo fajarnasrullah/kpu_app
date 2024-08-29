@@ -44,6 +44,7 @@ class FormEntryActivity : AppCompatActivity(), View.OnClickListener {
     private var note: Note? = null
     private var position: Int = 0
     private var kelamin: String = ""
+    private var alamat: String = ""
     private val calendar = Calendar.getInstance()
     private lateinit var noteHelper: NoteHelper
 
@@ -96,6 +97,9 @@ class FormEntryActivity : AppCompatActivity(), View.OnClickListener {
         val actionBarTitle: String
         val btnTitle: String
 
+        binding.btnCekLokasi.setOnClickListener {
+            startActivity(Intent(this, MapsActivity::class.java))
+        }
 
         binding.ivCalendar.setOnClickListener {
             showCalendar()
@@ -108,8 +112,18 @@ class FormEntryActivity : AppCompatActivity(), View.OnClickListener {
         binding.radioPr.setOnClickListener {
             sharedPreferences.edit().putString("P", "Perempuan").apply()
         }
+
+
         val l = sharedPreferences.getString("L", "Laki-laki")
         val p = sharedPreferences.getString("P", "Perempuan")
+
+
+        binding.btnSetLokasi.setOnClickListener {
+            val address = sharedPreferences.getString("alamat", "jonggol").toString()
+            binding.edtAlamat.setText(address)
+
+            alamat = address
+        }
 
 
         if (isEdit) {
@@ -157,7 +171,7 @@ class FormEntryActivity : AppCompatActivity(), View.OnClickListener {
                 kelamin = binding.radioPr.text.toString().trim()
             }
             val tanggal = binding.edtTgl.text.toString().trim()
-            val alamat = binding.edtAlamat.text.toString().trim()
+
 
 //            if (nik.isEmpty()) {
 //                binding.edtNik.error = "NIK tidak boleh kosong"
